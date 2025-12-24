@@ -1,0 +1,40 @@
+Name: Ayushya Shrivastav
+
+Profile Summary:
+Machine Learning Engineer with hands-on experience in computer vision, data analytics,
+and real-time video analytics systems. Skilled in building end-to-end ML solutions,
+from data preprocessing and model training to deployment and monitoring.
+Experienced in surveillance-focused ML pipelines and analytics dashboards,
+delivering measurable accuracy and performance improvements.
+
+Education:
+Bachelor of Technology in Computer Science
+Graphic Era (Deemed to be University), Dehradun, India
+July 2020 – June 2024
+CGPA: 8.53
+
+Technical Skills:
+Programming & Tools:
+Python (TensorFlow, PyTorch, Keras, OpenCV, SpaCy), SQL, VBA, Macros
+
+Machine Learning & AI:
+Deep Learning (CNNs, RNNs, Transformers)
+Computer Vision, NLP, Model Evaluation
+
+Data Analytics:
+Data Preprocessing, Data Exploration, Statistical Methods, Advanced Excel
+
+Data Visualization:
+Tableau, Power BI, Matplotlib, Seaborn, Apex Charts
+
+Data Engineering & Deployment:
+Feature Engineering, Data Pipelines, Model Deployment
+Backend APIs using Flask and FastAPI
+
+Certifications:
+Oracle Cloud Infrastructure AI Foundations Associate
+Microsoft Azure AI-900
+Data Analytics and Visualization Job Simulation – Accenture
+Introduction to SQL – University of Michigan
+Python Basics – Coursera
+Data Visualization – TATA Forage

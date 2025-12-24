@@ -1,0 +1,24 @@
+Q: Who are you professionally?
+A: I am a Machine Learning Engineer currently working as Software Engineer I – AI/ML,
+with hands-on experience in computer vision, real-time video analytics,
+and data-driven systems.
+
+Q: What kind of roles are you targeting?
+A: I am targeting Machine Learning Engineer and Data Scientist roles
+where I can work on applied AI problems, real-world data,
+and production-grade ML systems.
+
+Q: What makes your profile strong?
+A: I have experience building end-to-end ML pipelines,
+deploying real-time AI systems, and delivering measurable improvements
+in accuracy and performance in production environments.
+
+Q: Do you have deployment experience?
+A: Yes. I have deployed ML models using Flask and FastAPI,
+integrated them with dashboards, and optimized inference
+for real-time systems.
+
+Q: How do you approach solving ML problems?
+A: I start with understanding the problem and data,
+build baseline models, iterate through experimentation,
+and optimize solutions for real-world deployment constraints.

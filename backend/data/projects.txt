@@ -1,0 +1,91 @@
+Project: Computer Vision-Based Driver Drowsiness Detector
+Role: Machine Learning Engineer
+Technologies: Python, OpenCV, MobileNet, Deep Learning
+Description:
+Developed a real-time driver drowsiness detection system using computer vision
+and deep learning techniques to improve road safety.
+
+Approach:
+Used MobileNet with transfer learning for eye-state classification.
+Integrated webcam-based real-time monitoring and applied threshold-based logic
+to detect prolonged eye closure.
+
+Outcome:
+Achieved 91% accuracy in detecting driver drowsiness.
+Implemented an audio alert mechanism to warn drivers in real time.
+
+---
+
+Project: Violence Detection and Surveillance Analytics System
+Role: Machine Learning Engineer
+Technologies: Python, OpenCV, CNNs, RNNs, Transformers, Computer Vision
+Description:
+Built and deployed real-time video analytics models for surveillance and
+abnormal activity detection in live camera and drone-based environments.
+
+Approach:
+Designed ML pipelines for video-based inference.
+Trained and fine-tuned deep learning models for violence detection
+and activity recognition.
+Optimized models for real-world deployment by managing latency
+and accuracy trade-offs.
+
+Outcome:
+Improved real-world detection accuracy by 18%.
+Enabled actionable surveillance insights through real-time AI pipelines.
+
+---
+
+Project: Covid-19 Insights – Trends and Correlations
+Role: Data Analyst
+Technologies: SQL, Data Analytics, Data Pipelines
+Description:
+Performed large-scale data analysis on COVID-19 datasets to uncover
+trends, correlations, and predictive insights.
+
+Approach:
+Analyzed COVID-19 data from over 200 locations using advanced SQL queries.
+Engineered data pipelines integrating more than 1 million vaccination
+and mortality records.
+
+Outcome:
+Improved data processing speed by 35%.
+Accelerated insights delivery by 87%.
+Predicted death rates with 25% higher accuracy while maintaining
+98% data consistency.
+
+---
+
+Project: Housing Harmony – SQL-Driven Data Standardization
+Role: Data Analyst
+Technologies: SQL, Data Cleaning, Data Validation
+Description:
+Led a data cleaning and standardization project on large-scale housing datasets.
+
+Approach:
+Cleaned and standardized over 50,000 housing records.
+Removed duplicate entries and automated validation checks
+for high-volume data ingestion.
+
+Outcome:
+Reduced data inconsistencies by 95%.
+Improved query performance by 40%.
+Achieved 99.9% accuracy in automated validation workflows.
+
+---
+
+Project: Website Development for Vegetable Market Logs
+Role: Machine Learning Engineer / Full-Stack Developer
+Technologies: Python, Flask, React, AngularJS, Apex Charts
+Description:
+Developed a full-stack web application to predict vegetable prices
+across multiple Indian cities.
+
+Approach:
+Built Flask APIs to serve ML-based price predictions.
+Designed interactive dashboards using Apex Charts.
+Enhanced frontend experience using React and AngularJS.
+
+Outcome:
+Delivered an end-to-end system combining ML prediction,
+backend APIs, and interactive visual analytics.

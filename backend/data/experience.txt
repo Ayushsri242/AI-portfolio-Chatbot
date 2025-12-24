@@ -1,0 +1,18 @@
+Experience: Software Engineer I – AI/ML
+Company: Invenco AI
+Location: Surat, Gujarat, India
+Duration: October 2024 – Present
+
+Description:
+Working as a Machine Learning Engineer on real-time video analytics and
+surveillance-focused AI systems. Responsible for designing, training,
+optimizing, and deploying ML models used in live camera and drone-based monitoring.
+
+Key Responsibilities and Achievements:
+Architected a real-time video analytics pipeline for live surveillance insights.
+Trained and fine-tuned custom models for violence detection, driver drowsiness detection,
+and vehicle tracking, improving field accuracy by 18%.
+Streamlined dataset preparation workflows, reducing manual preprocessing effort.
+Implemented backend APIs to stream AI-processed JPEG feeds to dashboards in real time.
+Optimized deployment pipelines by balancing inference latency and model accuracy.
+Collaborated closely with ML engineers and frontend developers in a startup environment.
