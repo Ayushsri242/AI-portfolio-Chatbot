@@ -18,10 +18,7 @@ load_dotenv()
 app = FastAPI()
 
 # Load embedding model
-embedding_model = SentenceTransformer(
-    "all-MiniLM-L6-v2",
-    device="cpu"
-)
+embedding_model = None
 
 
 # Load FAISS index and data
@@ -46,7 +43,15 @@ def health_check():
 @app.post("/chat")
 def chat(request: ChatRequest):
     # Embed user query
+    global embedding_model
+    if embedding_model is None:
+        embedding_model = SentenceTransformer(
+            "all-MiniLM-L6-v2",
+            device="cpu"
+        )
+
     query_embedding = embedding_model.encode([request.message])
+
 
     # Retrieve top-k relevant chunks
     _, indices = index.search(query_embedding, 2)
