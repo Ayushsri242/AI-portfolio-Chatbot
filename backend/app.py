@@ -1,4 +1,8 @@
 import os
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 import pickle
 import faiss
 from fastapi import FastAPI
@@ -14,7 +18,11 @@ load_dotenv()
 app = FastAPI()
 
 # Load embedding model
-embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+embedding_model = SentenceTransformer(
+    "all-MiniLM-L6-v2",
+    device="cpu"
+)
+
 
 # Load FAISS index and data
 index = faiss.read_index("vectorstore/index.faiss")
@@ -41,7 +49,7 @@ def chat(request: ChatRequest):
     query_embedding = embedding_model.encode([request.message])
 
     # Retrieve top-k relevant chunks
-    _, indices = index.search(query_embedding, k=3)
+    _, indices = index.search(query_embedding, 2)
     retrieved_chunks = [texts[i] for i in indices[0]]
 
     context = "\n".join(retrieved_chunks)
