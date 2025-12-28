@@ -1,0 +1,35 @@
+=== EXPERIENCE ===
+
+Company: Invenco AI
+Role: Software Engineer I – AI/ML
+Location: Surat, Gujarat, India
+Duration: October 2024 – Present (ongoing)
+
+Notes:
+- This is an ongoing role.
+- No fixed end date yet.
+
+Responsibilities:
+- Architected real-time video analytics pipelines.
+- Trained and deployed violence detection, drowsiness detection, and vehicle tracking models.
+- Improved field accuracy by 18%.
+- Built backend APIs for real-time AI dashboards.
+
+=== PROJECTS ===
+
+Project: Covid-19 Insights – Trends and Correlations
+Technologies: SQL, Data Analytics, Data Pipelines
+Summary:
+- Analyzed COVID-19 data from 200+ locations using SQL.
+- Built pipelines on 1M+ records.
+
+Project: Housing Harmony – SQL-Driven Data Standardization
+Technologies: SQL, Data Cleaning
+Summary:
+- Cleaned and standardized 50,000+ housing records.
+
+=== SKILLS ===
+
+SQL:
+- Used in Covid-19 Insights project
+- Used in Housing Harmony project

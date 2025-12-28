@@ -54,7 +54,7 @@ def chat(request: ChatRequest):
 
 
     # Retrieve top-k relevant chunks
-    _, indices = index.search(query_embedding, 2)
+    _, indices = index.search(query_embedding, 5)
     retrieved_chunks = [texts[i] for i in indices[0]]
 
     context = "\n".join(retrieved_chunks)
@@ -64,8 +64,10 @@ You are an AI portfolio assistant for Ayushya Shrivastav.
 
 Rules:
 - Answer ONLY using the provided context.
+- If multiple items match (projects, skills, roles), list all of them.
+- If dates or durations are incomplete, say so explicitly.
 - If the answer is not present, say you do not have that information.
-- Be concise, professional, and interview-ready.
+
 
 Context:
 {context}
