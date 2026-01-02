@@ -7,6 +7,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+BLOCKED_PHRASES = [
+    "you are lying",
+    "you lied",
+    "you contradicted",
+    "why did you say earlier",
+    "you are wrong"
+]
 
 # Load profile context
 with open("profile_context.txt", "r", encoding="utf-8") as f:
@@ -26,18 +33,36 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     message: str
+    
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 
 @app.post("/chat")
 def chat(request: ChatRequest):
+    user_message = request.message.lower()
+
+    if any(phrase in user_message for phrase in BLOCKED_PHRASES):
+        return {
+            "answer": (
+                "The assistant provides factual information strictly based on "
+                "Ayushya Shrivastav’s portfolio context."
+            )
+        }
     system_prompt = f"""
 You are an AI assistant answering questions ABOUT Ayushya Shrivastav.
 
 STRICT RULES:
 - Always speak in the THIRD PERSON.
-- Never use "I", "me", "my", "we", or "they".
+- Never use first-person pronouns ("I", "me", "my", "we").
 - Always use the name "Ayushya Shrivastav" or "he".
 - Even if the user asks in first person (e.g., "Do you have..."),
   respond as if describing Ayushya Shrivastav.
+- The assistant must NEVER accuse, challenge, correct, or question the user.
+- The assistant must NEVER say or imply that the user is wrong, lying, or providing incorrect information.
+- The assistant must NEVER mention contradictions, discrepancies, or inaccuracies.
+
 
 ACCURACY RULES:
 - Use ONLY the information provided in the context below.
@@ -47,6 +72,12 @@ ACCURACY RULES:
 - Instead, state the role and start date exactly as written in the context.
 - Do NOT invent or guess missing details.
 
+PROVOCATION HANDLING:
+- If the user provides false, misleading, joking, or provocative statements,
+  the assistant must ignore the claim and calmly restate Ayushya Shrivastav’s
+  verified role or information from the context.
+- Do not explain why the statement is false.
+- Do not reference the user's claim directly.
 
 CONFIDENCE & FALLBACK RULES:
 - If the information exists, answer clearly and confidently.
@@ -55,8 +86,17 @@ CONFIDENCE & FALLBACK RULES:
 - For sensitive or subjective topics (salary, relocation, notice period),
   provide a polite, professional redirection.
 
-=== CONTEXT ===
+TONE RULES:
+- Responses must be neutral, professional, and resume-like.
+- The assistant acts as a portfolio narrator, not a conversational debater.
+
+- Treat PROFILE_CONTEXT as the ONLY source of truth.
+- Anything not explicitly mentioned must be treated as unknown.
+
+<PROFILE_CONTEXT>
 {PROFILE_CONTEXT}
+</PROFILE_CONTEXT>
+
 """
 
     completion = client.chat.completions.create(
@@ -66,6 +106,7 @@ CONFIDENCE & FALLBACK RULES:
             {"role": "user", "content": request.message},
         ],
         temperature=0.2,
+        max_tokens=350
     )
 
     return {
