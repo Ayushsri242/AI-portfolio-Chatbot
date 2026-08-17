@@ -5,236 +5,137 @@ All answers must be based ONLY on the information below.
 BASIC INFORMATION
 ==================================================
 
-Name: Ayushya Shrivastav  
-Current Location: Surat, Gujarat, India  
-
-Current Role:
-Software Engineer I – AI/ML at Invenco AI
-
-Employment Status:
-Currently working (ongoing role)
+Name: Ayushya Shrivastav
+Current Location: Hyderabad, Telangana, India
+Current Role: Computer Vision Engineer at WINIT (Win Information Technology Pvt. Ltd.)
+Employment Status: Currently employed (Active full-time role)
+Core Domain: Computer Vision (CV), Edge AI / On-Device Deployment, Generative AI (GenAI), and Applied Machine Learning.
 
 ==================================================
 EDUCATION
 ==================================================
 
 Degree:
-Bachelor of Technology (B.Tech) in Computer Science Engineering
+Bachelor of Technology (B.Tech) in Computer Science & Engineering
 
 University:
-Graphic Era (Deemed to be University), Dehradun, Uttarakhand
+Graphic Era (Deemed to be University), Dehradun, Uttarakhand, India
 
-Graduation Year:
-2024
+Graduation Period:
+July 2020 – June 2024
 
 CGPA:
-8.3 / 10
+8.53 / 10
+
+Academic Foundation:
+Centered on Computer Vision, Deep Learning architectures, Neural Networks, Real-Time AI Systems, and Applied Machine Learning.
 
 ==================================================
 PROFESSIONAL EXPERIENCE
 ==================================================
 
-Company:
-Invenco AI
+1. WINIT (Win Information Technology Pvt. Ltd.)
+--------------------------------------------------
+Role: Computer Vision Engineer
+Location: Hyderabad, Telangana, India
+Duration: February 2026 – Present (Current Ongoing Role)
 
-Role:
-Software Engineer I – AI/ML
+Domain & Core Work:
+- Retail Shelf Intelligence, On-Device Edge Computer Vision, and FMCG Planogram Analytics.
 
-Duration:
-October 2024 – Present (ongoing)
+Key Responsibilities & Achievements:
+- Retail Shelf Intelligence Engine: Architected an end-to-end computer vision system for supermarket FMCG retail brands (e.g., Choithrams, Rainbow, Perfetti), automating product facing counts, shelf layout mapping, and Share-of-Shelf (SoS) analytics.
+- On-Device Mobile Deployment: Integrated offline deep learning pipelines directly into production Android mobile applications via ONNX Runtime Mobile, delivering fast 10–15s inference on 4GB-RAM devices without cloud dependency or internet connection.
+- Dense Product Detection & Classification: Engineered high-accuracy YOLO detection models and multi-tier classifiers (binary brand-gate and fine-grained classification) to recognize and localize 127+ distinct product SKU classes across crowded supermarket shelves.
+- Shelf Segmentation: Deployed YOLO-based shelf segmentation models for precise shelf plane boundary detection and physical product size estimation.
+- Internal Tooling & Active Learning: Developed internal FastAPI review and audit web applications to validate field predictions in real time and automate continuous dataset curation for model retraining loops.
+- Mobile Packaging Optimization: Optimized native mobile library dependencies and ABI packaging, reducing the production APK size by 52% (264 MB to 126 MB).
 
-Role Description:
-- Working as an AI/ML Engineer on real-time surveillance and computer vision systems.
-- Designed, trained, and fine-tuned multiple deep learning models for real-world deployment.
-- Worked on live video feeds and drone-based surveillance pipelines.
+--------------------------------------------------
 
-Key Responsibilities:
-- Developed violence detection and driver drowsiness detection models.
-- Built wrong-way vehicle detection and over-speeding vehicle detection systems.
-- Worked on dataset preparation, annotation workflows, and data cleaning.
-- Integrated ML models with backend APIs for real-time inference.
-- Collaborated with frontend developers to integrate AI outputs into dashboards and user interfaces.
+2. Invenco AI (Unbemannt Technologies Pvt. Ltd.)
+--------------------------------------------------
+Role: Software Engineer I – AI/ML
+Location: Surat, Gujarat, India
+Duration: October 2024 – January 2026
 
-Impact:
-- Improved field accuracy of violence and drowsiness detection models by approximately 18%.
+Domain & Core Work:
+- Real-Time Video Surveillance, Drone Streaming Systems, and Edge Model Optimization.
+
+Key Responsibilities & Achievements:
+- Real-Time Video Analytics: Architected real-time surveillance analytics pipelines across live CCTV cameras and drone feeds using OpenCV, supporting low-latency 30 FPS video ingestion.
+- Drone Video Streaming & Electron Dashboard: Programmed Raspberry Pi onboard drones to capture and transmit RTSP camera streams, decoded via FFmpeg and GStreamer into a custom Electron desktop dashboard for live AI model execution.
+- Computer Vision Pipelines: Fine-tuned and deployed 4+ deep learning models for violence detection, driver drowsiness detection, vehicle tracking, and over-speeding alerts, boosting field detection accuracy by 18%.
+- MLOps & Edge Optimization: Automated dataset annotation workflows and optimized edge inference via model pruning and runtime tuning, cutting end-to-end inference latency by 20%.
 
 ==================================================
-PROJECTS
+FEATURED PROJECTS
 ==================================================
 
-1. Driver Drowsiness Detection System
------------------------------------
-Domain:
-Computer Vision, Deep Learning
+1. Generative AI Portfolio Chatbot
+--------------------------------------------------
+Domain: Generative AI, LLMs, RAG, Web Deployment
+Technologies: LLaMA 3.1 (via Groq), FastAPI, React, Context-Injection Architecture
+Timeline: December 2025
+GitHub Repository: https://github.com/Ayushsri242/AI-portfolio-Chatbot
 
-Model Architecture:
-MobileNet-based deep learning model
-
-Accuracy Achieved:
-Approximately 91%
-
-Alert Mechanism:
-- Detects driver drowsiness from live video feed.
-- Triggers alerts when drowsiness thresholds are crossed.
+Key Highlights:
+- Built a low-latency conversational AI assistant using LLaMA 3.1-8B and FastAPI, eliminating hallucinations through strict prompt engineering and structured context injection.
+- Refactored traditional FAISS vector storage into a lightweight context-injection pipeline to operate smoothly under free-tier cloud memory constraints (Render).
+- Integrated directly into Ayushya's portfolio website with warmup health pings and streaming responses.
 
 --------------------------------------------------
 
-2. Covid-19 Insights – Trends and Correlations
----------------------------------------------
-Domain:
-Data Analytics, SQL, Machine Learning
+2. Computer Vision-Based Driver Drowsiness & Fatigue Detector
+--------------------------------------------------
+Domain: Computer Vision, Real-Time Edge AI, Driver Safety
+Technologies: MobileNet, OpenCV, Python
+Timeline: February 2025
+GitHub Repository: https://github.com/Ayushsri242/DROWSINESS_DETECTION
 
-Dataset Size:
-Analyzed datasets containing over 1 million records.
-
-Technologies Used:
-SQL, Python, Data Analysis
-
-Work Done:
-- Built SQL-based data pipelines for large COVID-19 datasets.
-- Performed trend analysis and correlation studies.
-- Improved data processing speed by approximately 35% using optimized SQL queries.
-
-Outcome:
-- Built models and analyses that improved prediction insights by around 25%.
+Key Highlights:
+- Implemented a real-time driver safety monitoring system using MobileNet and OpenCV, achieving approximately 91% accuracy on live video streams.
+- Integrated automated alert triggers for eye closure and head pose deviations, operating smoothly at 30+ FPS.
+- Fine-tuned lightweight models with transfer learning to ensure low-latency inference on standard webcams and edge devices.
 
 --------------------------------------------------
 
-3. Housing Harmony – SQL-Driven Data Standardization
----------------------------------------------------
-Domain:
-Data Cleaning, SQL
-
-Records Processed:
-Cleaned and standardized over 50,000 housing records.
-
-Technologies Used:
-SQL
-
-Impact:
-- Improved query performance by approximately 40%.
-- Enabled more consistent and reliable analytics on housing datasets.
-
+3. Agri-Commodity Price Forecasting & Analytics Platform
 --------------------------------------------------
+Domain: Applied Machine Learning, Predictive Analytics, Web Development
+Technologies: Python, Flask REST API, React, Time-Series ML, ApexCharts
+Timeline: July 2023 – August 2023
+Live Demo: https://sub-z-market.web.app/
 
-4. Vegetable Market Logs – Website & Analytics Platform
--------------------------------------------------------
-Domain:
-Full-Stack Development, ML Integration
-
-Technologies Used:
-Flask, Python, React, AngularJS, ApexCharts
-
-Key Contributions:
-- Built a Flask API to serve predictive model outputs.
-- Integrated analytics graphs and dashboards for market trends.
-- Worked on both backend logic and frontend visualization.
+Key Highlights:
+- Built an end-to-end commodity price forecasting engine for Indian agricultural markets using time-series predictive modeling.
+- Implemented RESTful Flask APIs to serve price predictions dynamically to responsive front-end dashboards.
+- Integrated interactive ApexCharts visualization for multi-city commodity price trend analysis.
 
 ==================================================
 TECHNICAL SKILLS
 ==================================================
 
-Programming Languages:
-- Python
-- SQL
+- Computer Vision & Deep Learning:
+  Object Detection (YOLO), Shelf & Instance Segmentation, Fine-Grained Image Classification, PyTorch, OpenCV, Albumentations, Metric Learning, Transfer Learning.
 
-Machine Learning & Deep Learning:
-- Model training, fine-tuning, and evaluation
-- TensorFlow
-- PyTorch
-- Keras
+- Generative AI & Applied AI/ML:
+  LLaMA 3.1, RAG (Retrieval-Augmented Generation), Context Injection, Prompt Engineering, Model Fine-Tuning & Evaluation, Groq Cloud API.
 
-Computer Vision:
-- OpenCV
-- Real-time video analytics
-- Violence detection
-- Driver drowsiness detection
-- Vehicle tracking and surveillance systems
-- Drone-based video analysis
+- Edge Deployment & MLOps:
+  ONNX / ONNX Runtime Mobile, Android / Kotlin Integration, Model Parity Auditing, Hugging Face Hub, CI/CD (GitHub Actions), Docker, Model Pruning & Quantization Analysis.
 
-Natural Language Processing (NLP):
-- Text preprocessing and analysis
-- Familiarity with NLP concepts and transformer-based models
-- Experience integrating Large Language Models (LLMs) via APIs
-- Applied NLP concepts in analytics and AI workflows
-
-Databases & Data Processing:
-- SQL-based data cleaning, transformation, and analytics
-- Experience working with large datasets (1M+ records)
-
-Data Visualization & BI Tools:
-- Tableau
-- Power BI
-- ApexCharts
-
-Backend & API Development:
-- FastAPI
-- Flask
-- REST API development
-- Model inference APIs
-
-Frontend Development:
-- React
-- AngularJS
-- HTML
-- CSS
-- JavaScript
-
-Cloud & AI Platforms:
-- Microsoft Azure AI (AI-900 Certified)
-- Microsoft Azure Fundamentals (AZ-900 Certified)
-- Oracle Cloud Infrastructure AI Foundations
-
-Deployment & MLOps:
-- Model deployment and monitoring
-- API-based AI system deployment
-- Handling infrastructure constraints during deployment
+- Languages & Core Stack:
+  Python, FastAPI, SQL (PostgreSQL), C++, Linux, Git, Electron, FFmpeg, GStreamer.
 
 ==================================================
-CHATBOT & GENERATIVE AI SHOWCASE
+PROFESSIONAL CERTIFICATIONS
 ==================================================
 
-This chatbot was built by Ayushya Shrivastav as a Generative AI portfolio project.
+1. Microsoft Certified: Azure AI Fundamentals (AI-900)
+   - Issued by: Microsoft
+   - Scope: Core competencies in Cloud Artificial Intelligence, Computer Vision, NLP, and Machine Learning workloads on Microsoft Azure.
 
-Purpose:
-- To allow recruiters to query professional experience, projects, and skills conversationally.
-- To demonstrate applied Generative AI and system design skills.
-
-Technologies Used:
-- Backend: FastAPI
-- LLM Provider: Groq (LLaMA 3.1)
-- Prompt Engineering: Context-injected system prompts
-- Frontend: React with TypeScript
-- Deployment: Render (Free Tier)
-
-Architecture Design:
-- A complete Retrieval-Augmented Generation (RAG) system using FAISS and embeddings was implemented locally.
-- Due to memory constraints on free-tier cloud infrastructure, the deployed version uses a prompt-engineered, context-based approach instead of vector search.
-- This design ensures reliability, low latency, and zero infrastructure cost while maintaining answer accuracy.
-
-Generative AI Skills Demonstrated:
-- Prompt engineering and system instruction design
-- Trade-off analysis between RAG-based and lightweight architectures
-- Safe handling of sensitive information
-- API-based LLM integration
-- Real-world deployment constraints and optimization
-
-==================================================
-CONTACT INFORMATION
-==================================================
-
-Location:
-Surat, Gujarat, India
-
-Email:
-Available via the contact section of the portfolio website.
-
-GitHub:
-https://github.com/Ayushsri242
-
-LinkedIn:
-Accessible via the LinkedIn icon on the portfolio website.
-
-Notes:
-- Contact details should be shared politely and professionally.
-- Do not invent phone numbers or email addresses.
+2. Oracle Cloud Infrastructure (OCI) AI Certified Associate
+   - Issued by: Oracle
+   - Scope: Cloud AI infrastructure, Large Language Models (LLMs), deep learning services, and scalable cloud ML pipelines.
