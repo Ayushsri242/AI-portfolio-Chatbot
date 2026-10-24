@@ -7,7 +7,7 @@ BASIC INFORMATION
 
 Name: Ayushya Shrivastav
 Current Location: Hyderabad, Telangana, India
-Current Role: Computer Vision Engineer at WINIT (Win Information Technology Pvt. Ltd.)
+Current Role: AI/ML Engineer at WINIT (Win Information Technology Pvt. Ltd.)
 Employment Status: Currently employed (Active full-time role)
 Core Domain: Computer Vision (CV), Edge AI / On-Device Deployment, Generative AI (GenAI), and Applied Machine Learning.
 
@@ -36,7 +36,7 @@ PROFESSIONAL EXPERIENCE
 
 1. WINIT (Win Information Technology Pvt. Ltd.)
 --------------------------------------------------
-Role: Computer Vision Engineer
+Role: AI/ML Engineer
 Location: Hyderabad, Telangana, India
 Duration: February 2026 – Present (Current Ongoing Role)
 
@@ -44,12 +44,11 @@ Domain & Core Work:
 - Retail Shelf Intelligence, On-Device Edge Computer Vision, and FMCG Planogram Analytics.
 
 Key Responsibilities & Achievements:
-- Retail Shelf Intelligence Engine: Architected an end-to-end computer vision system for supermarket FMCG retail brands (e.g., Choithrams, Rainbow, Perfetti), automating product facing counts, shelf layout mapping, and Share-of-Shelf (SoS) analytics.
-- On-Device Mobile Deployment: Integrated offline deep learning pipelines directly into production Android mobile applications via ONNX Runtime Mobile, delivering fast 10–15s inference on 4GB-RAM devices without cloud dependency or internet connection.
-- Dense Product Detection & Classification: Engineered high-accuracy YOLO detection models and multi-tier classifiers (binary brand-gate and fine-grained classification) to recognize and localize 127+ distinct product SKU classes across crowded supermarket shelves.
-- Shelf Segmentation: Deployed YOLO-based shelf segmentation models for precise shelf plane boundary detection and physical product size estimation.
-- Internal Tooling & Active Learning: Developed internal FastAPI review and audit web applications to validate field predictions in real time and automate continuous dataset curation for model retraining loops.
-- Mobile Packaging Optimization: Optimized native mobile library dependencies and ABI packaging, reducing the production APK size by 52% (264 MB to 126 MB).
+- Retail Shelf Intelligence Engine: Architected an offline on-device shelf engine executing 4-stage CV inference in 10–15s for 300+ dense items (peak 767) to calculate facing counts and Share-of-Shelf (SoS) on 4GB-RAM Android devices without internet dependency.
+- Small-Product Localization & Classification: Fine-tuned YOLOv11n (0.975 mAP@50 across packed shelves averaging 122+ items per image); engineered a 2-tier classification stack (MobileNetV3 brand gate with 0.997 macro-F1 on 28k crops, and a 127-class SKU classifier) to resolve long-tail distribution imbalance.
+- Shelf Segmentation & Spatial Scaling: Developed shelf plane segmentation (YOLO11n-seg, 0.979 mask mAP@50) and a width-anchor pixel-to-cm scaling algorithm, lifting physical variant classification accuracy from 84.7% to 88.0%.
+- Edge Deployment & Optimization: Exported pipeline to fp32 ONNX Runtime Mobile, validating 32/32 bit-exact desktop-to-device golden set parity and slashing APK size by 52% (264MB to 126MB) via ABI splitting and native cleanup.
+- Telemetry & Tooling: Built an internal FastAPI human-in-the-loop audit tool with byte-identical 24-column telemetry schemas, enabling continuous active learning and automated retraining dataset assembly.
 
 --------------------------------------------------
 
@@ -65,28 +64,52 @@ Domain & Core Work:
 Key Responsibilities & Achievements:
 - Real-Time Video Analytics: Architected real-time surveillance analytics pipelines across live CCTV cameras and drone feeds using OpenCV, supporting low-latency 30 FPS video ingestion.
 - Drone Video Streaming & Electron Dashboard: Programmed Raspberry Pi onboard drones to capture and transmit RTSP camera streams, decoded via FFmpeg and GStreamer into a custom Electron desktop dashboard for live AI model execution.
-- Computer Vision Pipelines: Fine-tuned and deployed 4+ deep learning models for violence detection, driver drowsiness detection, vehicle tracking, and over-speeding alerts, boosting field detection accuracy by 18%.
+- Computer Vision Pipelines: Fine-tuned and deployed 4+ deep learning models for violence detection, driver drowsiness detection, vehicle tracking, and over-speeding alerts, boosting field detection accuracy by 18% and cutting manual preprocessing by 40%.
 - MLOps & Edge Optimization: Automated dataset annotation workflows and optimized edge inference via model pruning and runtime tuning, cutting end-to-end inference latency by 20%.
 
 ==================================================
 FEATURED PROJECTS
 ==================================================
 
-1. Generative AI Portfolio Chatbot
+1. Assay: Autonomous Multimodal Fact-Checking System for Social Media
+--------------------------------------------------
+Domain: Multimodal AI, Large Language Models (LLMs), Retrieval-Augmented Verification, On-Device Edge Android
+Technologies: React Native, Kotlin, Groq Cloud API (Qwen3.8-27B, GPT-OSS-120B), Whisper (STT), Python (Render Fallback), GitHub Actions CI/CD
+Timeline: October 2026
+GitHub Repository: https://github.com/Ayushsri242/Instagram-Tech-Fact-Checker
+
+Overview:
+Assay is a shipped, production-grade Android application that fact-checks Instagram reels, single-image posts, and multi-slide carousels (up to 20 slides) in ~42 seconds. It operates via a floating bubble overlay or Quick Settings tile directly on top of Instagram, executing multimodal claim extraction, live web search, structured API verification, and reasoning-based verdict synthesis in the background without needing the app open.
+
+Key Technical Achievements & Metrics:
+- Multimodal Ingestion Pipeline: Fuses video frames, on-device OCR, and Whisper speech-to-text (with multilingual audio transcription) into a structured evidence payload.
+- Latency & Benchmarking: Returns classified verdicts in ~42s median latency (~71s p90), benchmarked across 335 test runs on 188 unique real posts across 41 test batches (with an ~8% failure rate, primarily on login-restricted Instagram posts, handled with user-friendly errors and retry queues).
+- 3 Specialized Domain Verification Modes:
+  1. Tech Mode: Validates claimed software packages and developer tools against official package registries and APIs (GitHub, PyPI, npm, Hugging Face).
+  2. Side-Hustle/Money Mode: Detects earning and pay rate claims, querying review platforms (Reddit, Trustpilot) to contrast claimed compensation against typical reported pay.
+  3. Security News Mode: Detects CVE identifiers and security incident language; prioritizes live advisories and news reporting first, with strict grounding rules preventing knowledge-cutoff hallucinations.
+- 2-Stage LLM Orchestration & Token Optimization: Employs a 2-stage model chain using Qwen3.8-27B as a fast reader for claim extraction, and GPT-OSS-120B as the reasoning judge with an ordered first-match evaluation checklist (FAKE, MISLEADING, HYPE, PARTIALLY_TRUE, TRUE). Dynamically ranks evidence to the top 12 sources, capping usage at ~5k–8k tokens per check to sustain ~35 free checks per day within Groq free-tier rate limits.
+- Grounding & Confidence Scoring: Combines deterministic code rules with LLM outputs (e.g., FAKE is overruled when tool existence is verified; TRUE is downgraded if tools are missing) and an evidence-gated confidence model (10–95 score) penalizing missing slides or search failures. Evaluated with 0 regressions across an offline replay suite of 174 posts.
+- Production Android Engineering: Features a background Headless JS service with partial wake locks, in-app OTA updates, 109 automated CI builds on GitHub Actions, and an asynchronous 47-column telemetry stream to Google Sheets for field diagnostics.
+
+--------------------------------------------------
+
+2. Generative AI Portfolio Chatbot
 --------------------------------------------------
 Domain: Generative AI, LLMs, RAG, Web Deployment
-Technologies: LLaMA 3.1 (via Groq), FastAPI, React, Context-Injection Architecture
+Technologies: LLaMA 3.1, FAISS, Sentence-Transformers, FastAPI, React, Groq Cloud API
 Timeline: December 2025
 GitHub Repository: https://github.com/Ayushsri242/AI-portfolio-Chatbot
 
 Key Highlights:
-- Built a low-latency conversational AI assistant using LLaMA 3.1-8B and FastAPI, eliminating hallucinations through strict prompt engineering and structured context injection.
-- Refactored traditional FAISS vector storage into a lightweight context-injection pipeline to operate smoothly under free-tier cloud memory constraints (Render).
-- Integrated directly into Ayushya's portfolio website with warmup health pings and streaming responses.
+- Engineered a full RAG prototype using Sentence-Transformers (all-MiniLM-L6-v2) generating 384-dim dense embeddings, sliding-window chunking (350 character chunks, 150 character overlap), and a FAISS IndexFlatL2 vector index retrieving the top-5 context chunks for LLaMA 3.1 generation.
+- Overcame 512MB cloud RAM limits on Render by refactoring the in-memory vector index into a lightweight context-injection architecture, slashing memory footprint while maintaining zero-hallucination accuracy.
+- Implemented production conversational guardrails including a 4-turn sliding context memory buffer, adversarial phrase filtering, and strict 3rd-person recruiter persona constraints to prevent date and timeline hallucinations.
+- Integrated live on Ayushya's portfolio website with warmup health pings and sub-second responses powered by Groq.
 
 --------------------------------------------------
 
-2. Computer Vision-Based Driver Drowsiness & Fatigue Detector
+3. Computer Vision-Based Driver Drowsiness & Fatigue Detector
 --------------------------------------------------
 Domain: Computer Vision, Real-Time Edge AI, Driver Safety
 Technologies: MobileNet, OpenCV, Python
@@ -94,48 +117,32 @@ Timeline: February 2025
 GitHub Repository: https://github.com/Ayushsri242/DROWSINESS_DETECTION
 
 Key Highlights:
-- Implemented a real-time driver safety monitoring system using MobileNet and OpenCV, achieving approximately 91% accuracy on live video streams.
+- Implemented a real-time driver safety monitoring system using MobileNet and OpenCV, achieving approximately 91% accuracy on live webcam streams.
 - Integrated automated alert triggers for eye closure and head pose deviations, operating smoothly at 30+ FPS.
 - Fine-tuned lightweight models with transfer learning to ensure low-latency inference on standard webcams and edge devices.
-
---------------------------------------------------
-
-3. Agri-Commodity Price Forecasting & Analytics Platform
---------------------------------------------------
-Domain: Applied Machine Learning, Predictive Analytics, Web Development
-Technologies: Python, Flask REST API, React, Time-Series ML, ApexCharts
-Timeline: July 2023 – August 2023
-Live Demo: https://sub-z-market.web.app/
-
-Key Highlights:
-- Built an end-to-end commodity price forecasting engine for Indian agricultural markets using time-series predictive modeling.
-- Implemented RESTful Flask APIs to serve price predictions dynamically to responsive front-end dashboards.
-- Integrated interactive ApexCharts visualization for multi-city commodity price trend analysis.
 
 ==================================================
 TECHNICAL SKILLS
 ==================================================
 
 - Computer Vision & Deep Learning:
-  Object Detection (YOLO), Shelf & Instance Segmentation, Fine-Grained Image Classification, PyTorch, OpenCV, Albumentations, Metric Learning, Transfer Learning.
+  Object Detection (YOLO), Shelf & Instance Segmentation, Fine-Grained Image Classification, Real-Time Inference, PyTorch, OpenCV, Albumentations, Metric Learning, Transfer Learning.
 
-- Generative AI & Applied AI/ML:
-  LLaMA 3.1, RAG (Retrieval-Augmented Generation), Context Injection, Prompt Engineering, Model Fine-Tuning & Evaluation, Groq Cloud API.
+- Generative AI & Multimodal:
+  Large Language Models (LLaMA, Qwen, GPT-OSS), Prompt Engineering, Context Injection, Multimodal Fusion (Whisper, OCR), Model Chaining, Token Optimization, Groq Cloud API.
 
-- Edge Deployment & MLOps:
-  ONNX / ONNX Runtime Mobile, Android / Kotlin Integration, Model Parity Auditing, Hugging Face Hub, CI/CD (GitHub Actions), Docker, Model Pruning & Quantization Analysis.
+- Model Deployment & Edge:
+  ONNX Runtime (Mobile & Desktop), Android / Kotlin Integration, Model Quantization, Latency Optimization, Edge Computing, CI/CD (GitHub Actions), Docker.
 
-- Languages & Core Stack:
-  Python, FastAPI, SQL (PostgreSQL), C++, Linux, Git, Electron, FFmpeg, GStreamer.
+- Backend, DevOps & OS:
+  Python, FastAPI, React, PostgreSQL, Docker, Linux, Git, Electron, FFmpeg, GStreamer.
 
 ==================================================
 PROFESSIONAL CERTIFICATIONS
 ==================================================
 
 1. Microsoft Certified: Azure AI Fundamentals (AI-900)
-   - Issued by: Microsoft
-   - Scope: Core competencies in Cloud Artificial Intelligence, Computer Vision, NLP, and Machine Learning workloads on Microsoft Azure.
+   - Scope: Cloud Artificial Intelligence, Computer Vision, NLP, and Machine Learning workloads on Microsoft Azure.
 
 2. Oracle Cloud Infrastructure (OCI) AI Certified Associate
-   - Issued by: Oracle
    - Scope: Cloud AI infrastructure, Large Language Models (LLMs), deep learning services, and scalable cloud ML pipelines.
